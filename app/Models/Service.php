@@ -12,4 +12,9 @@ class Service extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'user_to_service', 'service_id', 'user_id');
+    }
 }

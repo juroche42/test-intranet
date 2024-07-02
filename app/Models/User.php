@@ -24,4 +24,9 @@ class User extends Authenticatable
         'poste',
         'status',
     ];
+
+    public function services()
+    {
+        return $this->belongsToMany(Service::class, 'user_to_service', 'user_id', 'service_id');
+    }
 }
