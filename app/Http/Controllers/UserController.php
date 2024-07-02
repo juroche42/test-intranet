@@ -23,7 +23,7 @@ class UserController extends Controller
             'prenom' => 'required|string|max:255',
             'nom' => 'required|string|max:255',
             'poste' => 'required|string|max:255',
-            'email' => 'required|email|max:255|unique:users,email,' . $id,
+            'email' => 'required|email|max:255|unique:users,email,' . $userId,
             'statut' => 'required|int|in:0,1',
         ]);
 
