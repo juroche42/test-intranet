@@ -17,7 +17,7 @@ class UserController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, int $userId)
     {
         $validator = Validator::make($request->all(), [
             'prenom' => 'required|string|max:255',
@@ -31,7 +31,7 @@ class UserController extends Controller
             return response()->json($validator->errors(), 422);
         }
 
-        $user = User::find($id);
+        $user = User::find($userId);
 
         if (!$user) {
             return response()->json(['error' => 'User not found'], 404);
@@ -40,5 +40,18 @@ class UserController extends Controller
         $user->update($request->all());
 
         return response()->json($user, 200);
+    }
+
+    public function delete(int $userId)
+    {
+        $user = User::find($userId);
+
+        if (!$user) {
+            return response()->json(['error' => 'User not found'], 404);
+        }
+
+        $user->delete();
+
+        return response()->json(['message' => 'User deleted'], 200);
     }
 }
