@@ -44,14 +44,24 @@ class UserController extends Controller
 
 
     /**
-     * @OA\Post(
-     *     path="/users",
+     * @OA\Put(
+     *     path="/users/{userId}",
      *     tags={"Users"},
-     *     summary="Create a user",
-     *     description="Create a user",
+     *     summary="Update a user",
+     *     description="Update a user",
      *     @OA\RequestBody(
      *         required=true,
      *         @OA\JsonContent(ref="#/components/schemas/User")
+     *     ),
+     * *     @OA\Parameter(
+     *         name="userId",
+     *         in="path",
+     *         description="ID of user to delete",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="integer",
+     *             format="int64"
+     *         )
      *     ),
      *     @OA\Response(
      *         response=200,
@@ -59,16 +69,16 @@ class UserController extends Controller
      *         @OA\JsonContent(ref="#/components/schemas/User")
      *     ),
      *     @OA\Response(
-     *         response=401,
-     *         description="Unauthorized"
-     *     ),
-     *     @OA\Response(
-     *         response=403,
-     *         description="Forbidden"
-     *     ),
-     *     @OA\Response(
      *         response=422,
      *         description="Unprocessable Entity"
+     *     ),
+     * *   @OA\Response(
+     *         response=404,
+     *         description="User not found",
+     *        @OA\JsonContent(
+     *            type="object",
+     *            @OA\Property(property="error", type="string")
+     *       )
      *     )
      * )
      */
@@ -122,16 +132,12 @@ class UserController extends Controller
      *         )
      *     ),
      *     @OA\Response(
-     *         response=401,
-     *         description="Unauthorized"
-     *     ),
-     *     @OA\Response(
-     *         response=403,
-     *         description="Forbidden"
-     *     ),
-     *     @OA\Response(
      *         response=404,
-     *         description="User not found"
+     *         description="User not found",
+     *        @OA\JsonContent(
+     *            type="object",
+     *            @OA\Property(property="error", type="string")
+     *       )
      *     )
      * )
      */

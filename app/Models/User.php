@@ -20,7 +20,6 @@ use OpenApi\Annotations as OA;
  *      @OA\Property(property="nom", type="string"),
  *      @OA\Property(property="prenom", type="string"),
  *      @OA\Property(property="poste", type="string"),
- *      @OA\Property(property="status", type="string"),
  *      @OA\Property(property="created_at", type="string", format="date-time"),
  *      @OA\Property(property="updated_at", type="string", format="date-time"),
  * )
