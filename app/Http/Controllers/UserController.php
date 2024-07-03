@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
 use Illuminate\Support\Facades\Validator;
+use App\Models\User;
 use OpenApi\Annotations as OA;
+
+use App\Traits\FiltersTrait;
 
 class UserController extends Controller
 {
 
+    use FiltersTrait;
     /**
      * @OA\Get(
      *     path="/users",
@@ -34,11 +37,12 @@ class UserController extends Controller
      *     )
      * )
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::with('services:name')
-            ->select(['id','prenom', 'nom', 'poste'])
-            ->get();
+        $query = User::with('services:name')
+            ->select(['id','prenom', 'nom', 'poste']);
+
+        $users = $this->applyFilters($request, $query);
         return response()->json($users);
     }
 
