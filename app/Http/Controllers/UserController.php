@@ -27,14 +27,6 @@ class UserController extends Controller
      *             @OA\Items(ref="#/components/schemas/User")
      *         )
      *     ),
-     *     @OA\Response(
-     *         response=401,
-     *         description="Unauthorized"
-     *     ),
-     *     @OA\Response(
-     *         response=403,
-     *         description="Forbidden"
-     *     )
      * )
      */
     public function index(Request $request)
