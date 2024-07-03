@@ -11,7 +11,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::with('services:name')
-            ->select(['id','prenom', 'nom', 'poste'])
+            ->select(['id','prenom', 'nom', 'poste', 'username'])
             ->get();
         return response()->json($users);
     }
