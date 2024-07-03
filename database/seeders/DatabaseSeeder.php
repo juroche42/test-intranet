@@ -24,7 +24,9 @@ class DatabaseSeeder extends Seeder
         $services = Service::all();
 
         foreach ($users as $user) {
-            $user->services()->attach($services->random());
+            $numberOfServices = rand(1, 3);
+            $randomServices = $services->random($numberOfServices);
+            $user->services()->attach($randomServices);
         }
 
     }
