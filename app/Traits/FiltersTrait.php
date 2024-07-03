@@ -8,6 +8,9 @@ trait FiltersTrait
 {
     public function applyFilters(Request $request, $query)
     {
+        if ($request->has('user_id')) {
+            return $query->find($request->input('user_id'));
+        }
         if ($request->has('service')) {
             $query->whereHas('services', function ($q) use ($request) {
                 $q->where('name', $request->input('service'));
