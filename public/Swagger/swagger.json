@@ -12,14 +12,14 @@
         }
     ],
     "paths": {
-        "/users": {
+        "api/users": {
             "get": {
                 "tags": [
                     "Users"
                 ],
                 "summary": "Get all users",
                 "description": "Get all users",
-                "operationId": "7e2f5799553ec93c9c43e2a58490d447",
+                "operationId": "fb731950393954765544c8ff1babb2ff",
                 "responses": {
                     "200": {
                         "description": "Successful operation",
@@ -37,14 +37,14 @@
                 }
             }
         },
-        "/users/{userId}": {
+        "api/users/{userId}": {
             "put": {
                 "tags": [
                     "Users"
                 ],
                 "summary": "Update a user",
                 "description": "Update a user",
-                "operationId": "41d38a4f8e33cc6adbda34fec285a8e7",
+                "operationId": "f9a44b92bd867ce2cbda6c1625d9a2e7",
                 "parameters": [
                     {
                         "name": "userId",
@@ -104,7 +104,7 @@
                 ],
                 "summary": "Delete a user",
                 "description": "Delete a user",
-                "operationId": "341625bac679588752894996746f795e",
+                "operationId": "5abb3a8af465d89dbb62248ca6cb78b4",
                 "parameters": [
                     {
                         "name": "userId",
