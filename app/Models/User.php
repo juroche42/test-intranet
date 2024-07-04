@@ -17,7 +17,7 @@ use OpenApi\Annotations as OA;
  *      @OA\Property(property="id", type="integer", format="int64"),
  *      @OA\Property(property="email", type="string"),
  *      @OA\Property(property="username", type="string"),
- *      @OA\Property(property="lastame", type="string"),
+ *      @OA\Property(property="lastname", type="string"),
  *      @OA\Property(property="firstname", type="string"),
  *      @OA\Property(property="job", type="string"),
  *      @OA\Property(property="created_at", type="string", format="date-time"),

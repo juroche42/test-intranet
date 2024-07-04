@@ -197,7 +197,7 @@
                     "username": {
                         "type": "string"
                     },
-                    "lastame": {
+                    "lastname": {
                         "type": "string"
                     },
                     "firstname": {
