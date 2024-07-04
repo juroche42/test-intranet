@@ -181,9 +181,9 @@
                 "required": [
                     "email",
                     "username",
-                    "nom",
-                    "prenom",
-                    "poste",
+                    "lastname",
+                    "firstname",
+                    "job",
                     "status"
                 ],
                 "properties": {
@@ -197,13 +197,13 @@
                     "username": {
                         "type": "string"
                     },
-                    "nom": {
+                    "lastame": {
                         "type": "string"
                     },
-                    "prenom": {
+                    "firstname": {
                         "type": "string"
                     },
-                    "poste": {
+                    "job": {
                         "type": "string"
                     },
                     "created_at": {

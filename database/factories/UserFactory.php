@@ -15,11 +15,11 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'nom' => $this->faker->lastName(),
-            'prenom' => $this->faker->firstName(),
+            'lastname' => $this->faker->lastName(),
+            'firstname' => $this->faker->firstName(),
             'username' => $this->faker->unique()->userName(),
             'email' => $this->faker->unique()->safeEmail(),
-            'poste' => $this->faker->jobTitle(),
+            'job' => $this->faker->jobTitle(),
             'status' => $this->faker->boolean() ? 1 : 0,
         ];
     }

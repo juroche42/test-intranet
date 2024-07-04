@@ -32,7 +32,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $query = User::with('services:name')
-            ->select(['id','prenom', 'nom', 'poste']);
+            ->select(['id','firstname', 'lastname', 'job']);
 
         $users = $this->applyFilters($request, $query);
         return response()->json($users);
@@ -81,11 +81,11 @@ class UserController extends Controller
     public function update(Request $request, int $userId)
     {
         $validator = Validator::make($request->all(), [
-            'prenom' => 'required|string|max:255',
-            'nom' => 'required|string|max:255',
-            'poste' => 'required|string|max:255',
+            'firstname' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
+            'job' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:users,email,' . $userId,
-            'statut' => 'required|int|in:0,1',
+            'status' => 'required|int|in:0,1',
         ]);
 
         if ($validator->fails()) {

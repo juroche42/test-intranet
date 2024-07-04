@@ -13,13 +13,13 @@ use OpenApi\Annotations as OA;
 /**
  * @OA\Schema(
  *    schema="User",
- *    required={"email", "username", "nom", "prenom", "poste", "status"},
+ *    required={"email", "username", "lastname", "firstname", "job", "status"},
  *      @OA\Property(property="id", type="integer", format="int64"),
  *      @OA\Property(property="email", type="string"),
  *      @OA\Property(property="username", type="string"),
- *      @OA\Property(property="nom", type="string"),
- *      @OA\Property(property="prenom", type="string"),
- *      @OA\Property(property="poste", type="string"),
+ *      @OA\Property(property="lastame", type="string"),
+ *      @OA\Property(property="firstname", type="string"),
+ *      @OA\Property(property="job", type="string"),
  *      @OA\Property(property="created_at", type="string", format="date-time"),
  *      @OA\Property(property="updated_at", type="string", format="date-time"),
  * )
@@ -36,9 +36,9 @@ class User extends Authenticatable
     protected $fillable = [
         'email',
         'username',
-        'nom',
-        'prenom',
-        'poste',
+        'lastname',
+        'firstname',
+        'job',
         'status',
     ];
 
