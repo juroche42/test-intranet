@@ -15,7 +15,7 @@ class UserController extends Controller
     use FiltersTrait;
     /**
      * @OA\Get(
-     *     path="/users",
+     *     path="api/users",
      *     tags={"Users"},
      *     summary="Get all users",
      *     description="Get all users",
@@ -41,7 +41,7 @@ class UserController extends Controller
 
     /**
      * @OA\Put(
-     *     path="/users/{userId}",
+     *     path="api/users/{userId}",
      *     tags={"Users"},
      *     summary="Update a user",
      *     description="Update a user",
@@ -105,7 +105,7 @@ class UserController extends Controller
 
     /**
      * @OA\Delete(
-     *     path="/users/{userId}",
+     *     path="api/users/{userId}",
      *     tags={"Users"},
      *     summary="Delete a user",
      *     description="Delete a user",
