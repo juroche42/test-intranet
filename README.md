@@ -9,7 +9,8 @@
 Pour commencer, vous devrez installer :
 
 - composer
-- php
+- php 8.3
+- docker
 
 Dans le terminal à la racine du projet, tapez: composer install <br>
 Dans le terminal à la racine du projet, tapez: cp .env.example .env <br>
@@ -22,9 +23,10 @@ Changez le nom de la base de donnée par celui que vous avez choisi dans le fich
 Si besoin:
 - Changez le nom d'utilisateur dans le fichier ".env" à la ligne DB_USERNAME
 - Changez le mot de passe dans le fichier ".env" à la ligne DB_PASSWORD
-- Changez le port mysql dans le fichier ".env" à la ligne DB_PORT
 
-Dans le terminal à la racine du projet, tapez: php artisan migrate.
+## Lancer le DB 
+
+Dans le terminal à la racine, tapez: docker compose up -d
 
 ## Rentrer des données fictives:
 
