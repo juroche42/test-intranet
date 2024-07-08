@@ -19,6 +19,55 @@ class UserController extends Controller
      *     tags={"Users"},
      *     summary="Get all users",
      *     description="Get all users",
+        * @OA\Parameter(
+    *         name="sort_by",
+    *         in="query",
+    *         description="Sort users by a specific field (e.g., 'lastname').",
+    *         required=false,
+    *         @OA\Schema(
+    *             type="string",
+    *             enum={"id", "firstname", "lastname", "job"}
+    *         )
+    *     ),
+    *     @OA\Parameter(
+    *         name="sort_order",
+    *         in="query",
+    *         description="Sort order (asc or desc).",
+    *         required=false,
+    *         @OA\Schema(
+    *             type="string",
+    *             enum={"asc", "desc"}
+    *         )
+    *     ),
+    *     @OA\Parameter(
+    *         name="page",
+    *         in="query",
+    *         description="Page number for pagination.",
+    *         required=false,
+    *         @OA\Schema(
+    *             type="integer",
+    *             default=1
+    *         )
+    *     ),
+    *     @OA\Parameter(
+    *         name="per_page",
+    *         in="query",
+    *         description="Number of items to return per page.",
+    *         required=false,
+    *         @OA\Schema(
+    *             type="integer",
+    *             default=10
+    *         )
+    *     ),
+    *     @OA\Parameter(
+    *         name="id",
+    *         in="query",
+    *         description="The user ID to filter access to a specific user.",
+    *         required=false,
+    *         @OA\Schema(
+    *             type="integer"
+    *         )
+    *     ),
      *     @OA\Response(
      *         response=200,
      *         description="Successful operation",
